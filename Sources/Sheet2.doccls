@@ -1,0 +1,18 @@
+﻿Option Explicit
+
+Private Sub Worksheet_Activate()
+    ROWS_COUNT = 10
+    COL_COUNT = 10
+    NEW_TILES_COUNT = 4
+    MsgBox "Welcome to 10x10 game"
+End Sub
+
+
+Private Sub Worksheet_Change(ByVal Target As Range)
+    Application.EnableEvents = False
+    If Not Intersect(Target, ActiveSheet.Range("B2:K11")) Is Nothing Then
+        MsgBox "Ай-ай-ай!"
+        Application.Undo
+    End If
+    Application.EnableEvents = True
+End Sub

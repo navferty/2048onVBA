@@ -1,0 +1,5 @@
+﻿Private Sub Workbook_BeforeClose(Cancel As Boolean)
+    UndeclareKeys
+    Sheets("2048").Activate
+    ActiveWorkbook.Save
+End Sub

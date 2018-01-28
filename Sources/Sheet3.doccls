@@ -1,0 +1,17 @@
+﻿Option Explicit
+
+Private Sub Worksheet_Activate()
+    ROWS_COUNT = 4
+    COL_COUNT = 4
+    NEW_TILES_COUNT = 1
+    MsgBox "Welcome to 4x4 game"
+End Sub
+
+Private Sub Worksheet_Change(ByVal Target As Range)
+    Application.EnableEvents = False
+    If Not Intersect(Target, ActiveSheet.Range("B2:E5")) Is Nothing Then
+        MsgBox "Ай-ай-ай!"
+        Application.Undo
+    End If
+    Application.EnableEvents = True
+End Sub
